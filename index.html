@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEBE DE PINO</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- 스타일시트 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════════════ -->
+  <header class="site-nav" id="siteNav">
+
+
+    <!-- 2) 상단 바: Korea/Q&A │ 로고 │ LOGIN … -->
+    <div class="nav-top">
+
+      <!-- 좌측 -->
+      <div class="nav-top-left">
+        <button class="nav-lang-btn" aria-label="언어 선택">
+          Korea [₩]
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+            <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.3"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-top-divider" aria-hidden="true"></div>
+        <a href="#" class="nav-qa-link">Q&A</a>
+      </div>
+
+      <!-- 로고 (중앙) -->
+      <div class="nav-logo">
+        <a href="/" aria-label="BEBE DE PINO 홈으로 이동">
+          <img
+            src="images/logo.svg"
+            alt="BEBE DE PINO"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="nav-logo-text" style="display:none">BEBE DE PINO</span>
+        </a>
+      </div>
+
+      <!-- 우측 유틸 링크 -->
+      <div class="nav-top-right">
+        <a href="#" class="nav-util-link">LOGIN</a>
+        <a href="#" class="nav-util-link">JOIN</a>
+        <a href="#" class="nav-util-link">MEMBERSHIP</a>
+        <a href="#" class="nav-util-link">MY PAGE</a>
+      </div>
+
+    </div>
+
+    <!-- 3) 하단 메뉴 바 -->
+    <nav class="nav-bottom" aria-label="주요 메뉴">
+
+      <ul class="nav-menu">
+        <li><a href="#">제품보기</a></li>
+        <li><a href="#">룩북</a></li>
+        <li><a href="#">미디어</a></li>
+        <li><a href="#">이벤트</a></li>
+        <li><a href="#">매장</a></li>
+        <li><a href="#">브랜드소개</a></li>
+      </ul>
+
+      <!-- 우측 아이콘 그룹 -->
+      <div class="nav-icons">
+
+        <!-- 검색 -->
+        <button class="nav-icon-btn" id="navSearchBtn" aria-label="검색" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+          </svg>
+        </button>
+
+        <!-- 장바구니 -->
+        <button class="nav-icon-btn" aria-label="장바구니">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+
+        <!-- 위시리스트 -->
+        <button class="nav-icon-btn" id="navWishBtn" aria-label="위시리스트">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06
+                     a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78
+                     1.06-1.06a5.5 5.5 0 000-7.78z"/>
+          </svg>
+          <span class="cart-badge" id="wishBadge" style="display:none;">0</span>
+        </button>
+
+      </div>
+
+      <!-- 모바일 햄버거 -->
+      <button class="nav-hamburger" id="navHamburger" aria-label="모바일 메뉴 열기" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" aria-hidden="true">
+          <line x1="3"  y1="6"  x2="21" y2="6"/>
+          <line x1="3"  y1="12" x2="21" y2="12"/>
+          <line x1="3"  y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+    </nav>
+
+    <!-- 검색 드롭다운 -->
+    <div class="nav-search-panel" id="navSearchPanel">
+      <div class="nav-search-inner">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+        </svg>
+        <input type="text" id="navSearchInput" placeholder="상품을 검색해보세요" aria-label="상품 검색">
+        <button class="nav-search-close" id="navSearchClose" aria-label="검색창 닫기">&times;</button>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       모바일 메뉴 드로어
+  ══════════════════════════════════════════════════════ -->
+  <div class="nav-drawer-overlay" id="navDrawerOverlay"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true">
+    <div class="nav-drawer-head">
+      <span class="nav-drawer-logo">BEBE DE PINO</span>
+      <button class="nav-drawer-close" id="navDrawerClose" aria-label="메뉴 닫기">&times;</button>
+    </div>
+    <ul class="nav-drawer-menu">
+      <li><a href="#">제품보기</a></li>
+      <li><a href="#">룩북</a></li>
+      <li><a href="#">미디어</a></li>
+      <li><a href="#">이벤트</a></li>
+      <li><a href="#">매장</a></li>
+      <li><a href="#">브랜드소개</a></li>
+    </ul>
+    <div class="nav-drawer-foot">
+      <a href="#">LOGIN</a>
+      <a href="#">JOIN</a>
+      <a href="#">MY PAGE</a>
+    </div>
+  </aside>
+
+
+  <!-- ══════════════════════════════════════════════════════
+     HERO VIDEO
+══════════════════════════════════════════════════════ -->
+<section class="hero" id="heroSection" aria-label="메인 비주얼">
+  <video
+    class="hero-video"
+    src="./videos/26SS_BEBEDEPINO.mp4"
+    poster="images/hero_1.jpg"
+    autoplay
+    muted
+    loop
+    playsinline>
+  </video>
+</section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       이후 섹션 추가 영역
+  ══════════════════════════════════════════════════════ -->
+  <main id="mainContent">
+    <!-- 다음 섹션들이 여기에 순서대로 추가됩니다 -->
+
+    <!-- ══════════════════════════════════════════════════════
+         COLLECTION 섹션
+    ══════════════════════════════════════════════════════ -->
+    <section class="collection" id="collectionSection" aria-label="컬렉션 슬라이더">
+
+      <div class="collection-track-wrap">
+
+        <div class="collection-track" id="collectionTrack">
+
+          <!-- 슬라이드 1 -->
+          <div class="col-slide">
+            <img src="images/hero_1.jpg" alt="26 Summer Collection 1" loading="lazy"
+                 onerror="this.parentElement.classList.add('col-placeholder'); this.remove();">
+            <div class="col-overlay">
+              <span class="col-label">26 SUMMER COLLECTION</span>
+            </div>
+          </div>
+
+          <!-- 슬라이드 2 -->
+          <div class="col-slide">
+            <img src="images/hero_2.jpg" alt="26 Summer Collection 2" loading="lazy"
+                 onerror="this.parentElement.classList.add('col-placeholder'); this.remove();">
+            <div class="col-overlay">
+              <span class="col-label">26 SUMMER COLLECTION</span>
+            </div>
+          </div>
+
+          <!-- 슬라이드 3 -->
+          <div class="col-slide">
+            <img src="images/hero_3.jpg" alt="26 Summer Collection 3" loading="lazy"
+                 onerror="this.parentElement.classList.add('col-placeholder'); this.remove();">
+            <div class="col-overlay">
+              <span class="col-label">26 SUMMER COLLECTION</span>
+            </div>
+          </div>
+
+          <!-- 슬라이드 4 -->
+          <div class="col-slide">
+            <img src="images/hero_4.jpg" alt="26 Summer Collection 4" loading="lazy"
+                 onerror="this.parentElement.classList.add('col-placeholder'); this.remove();">
+            <div class="col-overlay">
+              <span class="col-label">26 SUMMER COLLECTION</span>
+            </div>
+          </div>
+
+          <!-- 슬라이드 5 -->
+          <div class="col-slide">
+            <img src="images/hero_5.jpg" alt="26 Summer Collection 5" loading="lazy"
+                 onerror="this.parentElement.classList.add('col-placeholder'); this.remove();">
+            <div class="col-overlay">
+              <span class="col-label">26 SUMMER COLLECTION</span>
+            </div>
+          </div>
+
+        </div><!-- /.collection-track -->
+
+      </div><!-- /.collection-track-wrap -->
+
+      <!-- 이전 화살표 -->
+      <button class="col-arrow col-arrow-prev" id="colPrev" aria-label="이전 컬렉션">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <!-- 다음 화살표 -->
+      <button class="col-arrow col-arrow-next" id="colNext" aria-label="다음 컬렉션">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+     NEW / BEST 섹션
+══════════════════════════════════════════════════════ -->
+    <section class="nb" id="nbSection" aria-label="NEW BEST 상품">
+
+      <!-- 탭 버튼 -->
+      <div class="nb-tabs" role="tablist" aria-label="상품 탭">
+        <button class="nb-tab active" data-tab="new" role="tab" aria-selected="true">NEW</button>
+        <button class="nb-tab" data-tab="best" role="tab" aria-selected="false">BEST</button>
+      </div>
+
+      <!-- 상품 그리드 (JS로 렌더링) -->
+      <div class="nb-grid" id="nbGrid"></div>
+
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+     마퀴 텍스트 섹션
+══════════════════════════════════════════════════════ -->
+<section class="marquee" id="marqueeSection" aria-label="브랜드 슬로건">
+  <div class="marquee-track">
+    <img src="images/main_text.png" alt="BEBE DE PINO. LIKE NO OTHER STORE IN THE WORLD!" class="marquee-img">
+    <img src="images/main_text.png" alt="" class="marquee-img" aria-hidden="true">
+  </div>
+</section>
+
+
+
+
+<!-- ══════════════════════════════════════════════════════
+     SNS (INSTAGRAM) 섹션
+══════════════════════════════════════════════════════ -->
+<section class="sns" id="snsSection" aria-label="인스타그램 섹션">
+
+  <!-- 상단 타이틀 -->
+  <div class="sns-header">
+    <svg class="sns-header-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/>
+    </svg>
+    <p class="sns-header-text">
+      FOLLOW US ON INSTAGRAM <span class="sns-header-handle">@ BEBEDEPINO</span>
+    </p>
+  </div>
+
+  <!-- 카드 슬라이더 -->
+  <div class="sns-track-wrap">
+
+    <div class="sns-track" id="snsTrack"></div>
+
+  </div>
+
+  <!-- 이전 / 다음 화살표 -->
+  <button class="sns-arrow sns-arrow-prev" id="snsPrev" aria-label="이전 게시물">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+  </button>
+
+  <button class="sns-arrow sns-arrow-next" id="snsNext" aria-label="다음 게시물">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="9 18 15 12 9 6"/>
+    </svg>
+  </button>
+
+  <!-- 하단 로고 -->
+  <div class="sns-logo">
+    <img src="images/btm_bp_logo.svg" alt="BEBE DE PINO"
+         onerror="this.style.display='none';">
+  </div>
+
+</section>
+  </main>
+
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+<footer class="footer" id="siteFooter">
+
+  <div class="footer-inner">
+
+    <!-- 좌측 로고 -->
+    <div class="footer-brand">
+      <img src="images/bottom_logo.png" alt="BEBE DE PINO" class="footer-brand-logo"
+           onerror="this.style.display='none';">
+    </div>
+
+    <!-- MENU -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">MENU</h4>
+      <ul class="footer-links">
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">SHOP</a></li>
+        <li><a href="#">LOOKBOOK</a></li>
+        <li><a href="#">MEDIA</a></li>
+        <li><a href="#">EVENT</a></li>
+        <li><a href="#">STORE</a></li>
+      </ul>
+      <a href="#" class="footer-sns-icon" aria-label="인스타그램">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">CONTACT</h4>
+      <ul class="footer-links">
+        <li><a href="#">Q&amp;A</a></li>
+        <li><a href="#">FRANCHISE</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">MY PAGE</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#" class="footer-link-accent">SNS 저작물 이용 동의서</a></li>
+      </ul>
+    </div>
+
+    <!-- CUSTOMER -->
+    <div class="footer-col footer-col-wide">
+      <h4 class="footer-col-title">CUSTOMER</h4>
+
+      <p class="footer-text"><strong>온라인 고객센터</strong></p>
+      <p class="footer-text">1833-2005(주문/반품/교환/배송관련)</p>
+      <p class="footer-text">평일 09:00 - 17:00</p>
+      <p class="footer-text">(점심 12:00 - 13:00), 토/일요일·공휴일 휴무</p>
+
+      <p class="footer-text footer-text-gap">
+        <strong>물류센터:</strong> 경기도 파주시 광탄면 부흥로 235번길 146
+      </p>
+      <p class="footer-text">C동 1번 게이트 더캐리 파주 물류센터</p>
+
+      <p class="footer-text footer-text-gap">
+        <strong>매장 개설 문의</strong> <a href="mailto:don@thekary.com">don@thekary.com</a>
+      </p>
+      <p class="footer-text">
+        <strong>마케팅/제휴 문의</strong> <a href="mailto:kate1@thekary.com">kate1@thekary.com</a>
+      </p>
+      <p class="footer-text">
+        <strong>CS 문의</strong> <a href="mailto:cs@thekary.com">cs@thekary.com</a>
+      </p>
+    </div>
+
+    <!-- COMPANY -->
+    <div class="footer-col footer-col-wide">
+      <h4 class="footer-col-title">COMPANY</h4>
+
+      <p class="footer-text"><strong>회사명</strong> (주)더캐리</p>
+      <p class="footer-text"><strong>대표이사</strong> 이은정,윤중용</p>
+      <p class="footer-text"><strong>사업장</strong> 서울특별시 용산구 한남동 738-36 2F-5F</p>
+      <p class="footer-text"><strong>사업자등록번호</strong> 128-87-03548</p>
+      <p class="footer-text"><strong>법인등록번호</strong> 285011-0256318</p>
+      <p class="footer-text">
+        <strong>통신판매신고</strong> 제 2021-서울용산-1694호
+        <a href="#" class="footer-link-accent">[사업자정보확인]</a>
+      </p>
+      <p class="footer-text"><strong>E-MAIL</strong> <a href="mailto:bebedepino@thekary.com">bebedepino@thekary.com</a></p>
+      <p class="footer-text"><strong>FAX</strong> +82.2.6119.5003</p>
+      <p class="footer-text">
+        <a href="#" class="footer-link-accent">[KG 이니시스 구매안전 서비스 가입사실 확인]</a>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- 하단 바: Copyright + TOP 버튼 -->
+  <div class="footer-bottom">
+    <p class="footer-copyright">Copyright © BEBE DE PINO. All rights reserved.</p>
+
+    <button class="footer-top-btn" id="footerTopBtn" aria-label="맨 위로 이동">
+      <img src="images/m_top.svg" alt="" onerror="this.style.display='none';">
+      <span>TOP</span>
+    </button>
+  </div>
+
+</footer>
+
+
+
+
+
+
+  <!-- 자바스크립트 (</body> 직전 로드) -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
